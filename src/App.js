@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/questions")
+      .get("https://amazon-questions.onrender.com/questions")
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -26,7 +26,7 @@ function App() {
       updatedData[index].status === "Completed" ? "Not Completed" : "Completed";
 
     axios
-      .post("http://localhost:3001/update", updatedData)
+      .post("https://amazon-questions.onrender.com/update", updatedData)
       .then(() => {
         setData(updatedData);
 
